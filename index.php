@@ -1,4 +1,5 @@
-<?php
+<?php 
+	error_reporting(E_ALL);
 	header('Content-Type: application/json');
 	require "vendor/autoload.php";
 	require "functions.php";
