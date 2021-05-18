@@ -87,5 +87,3 @@ class FacebookDownload
         return round(($size/(1024*1024)), 2);
     }
 }
-$video = new FacebookDownload();
-      echo json_encode($video->process("https://www.facebook.com/1389805397707730/videos/159297806147111"));
