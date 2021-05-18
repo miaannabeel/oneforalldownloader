@@ -57,3 +57,7 @@
 		    ));
 			break;
 	}
+
+	if(isset($_REQUEST['phpinfo'])){
+		phpinfo();
+	}
