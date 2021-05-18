@@ -55,8 +55,8 @@ class InstagramDownloader
                         $return[] = array(
                             "type" => "video/mp4",
                             "thumb" => $edge->node->display_url,
-                            "url" => $edge->video_url,
-                            "size" => $this->videoSize($edge->video_url)
+                            "url" => $edge->node->video_url,
+                            "size" => $this->videoSize($edge->node->video_url)
                         );
                     } else if($edge->node->__typename == "GraphImage"){
                         foreach ($edge->node->display_resources as $edge_in) {
