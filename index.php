@@ -4,6 +4,7 @@
 	require "vendor/autoload.php";
 	require "functions.php";
 	require_once 'InstagramDownload.php';
+	require_once 'InstagramDownloader.php';
 	require_once 'FacebookDownload.php';
 	use Ayesh\InstagramDownload\InstagramDownload;
 	use Abraham\TwitterOAuth\TwitterOAuth;
@@ -15,7 +16,9 @@
 			echo json_encode($video->process($url));
 			break;
 		case 'instagram.com':
-			try {
+			$video = new InstagramDownloader();
+			echo json_encode($video->process($url));
+			/*try {
 			    $client = new InstagramDownload($url);
 			    $url    = $client->getDownloadUrl();
 			    $type   = $client->getType();
@@ -39,7 +42,7 @@
 			catch (\RuntimeException $exception) {
 			    $error = $exception->getMessage();
 			    echo $error;
-			}
+			}*/
 			break;
 		case 'twitter.com':
 			$connection = new TwitterOAuth("S6tc9bCXnA8CeGy8wOBTu98LF", "9O7YNsviXvjZdrVbj0sGjTrIUfv5L5hdGDi1D1UoKylgcv3gDT", "204253793-L80p6Tu1mR6AmgzP1GwWUPtBdJpDF8dafiEaDRE4", "XzRcrCbqM3G2DQyWkOmBgANhMNBlIsRaejfy6k8RNqTwC");
