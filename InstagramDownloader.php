@@ -1,10 +1,10 @@
 <?php
 class InstagramDownloader
 {
-    public function process($url)
-    {
+    public function process($url){
         $return = array();
         $data   = $this->parser($this->url_get_contents($url));
+        print_r($data);
         if(isset($data->entry_data)){
             if(isset($data->entry_data->PostPage[0]->graphql->shortcode_media)){
                 $shortcode_media = $data->entry_data->PostPage[0]->graphql->shortcode_media;
