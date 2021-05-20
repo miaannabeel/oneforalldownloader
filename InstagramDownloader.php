@@ -2,6 +2,7 @@
 class InstagramDownloader
 {
     public function curlWithCookie($url) {
+        $token         = md5(uniqid(rand(), TRUE));
         $arrSetHeaders = array(
             'authority: www.instagram.com',
             'method: GET',
